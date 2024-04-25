@@ -149,7 +149,7 @@ step_start "Openresty"
     fi
     printf "$source" | tee /etc/apt/sources.list.d/openresty.list >$__OUTPUT
   fi
-
+  sed -i 's|http://openresty.org/package/alpine/v3.19/main|http://openresty.org/package/alpine/v3.18/main|g' /etc/apk/repositories
   pkg_update
   pkg_add openresty
   ln -sf /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx
