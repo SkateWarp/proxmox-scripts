@@ -26,7 +26,7 @@ os_distro() {
 }
 
 os_fetch() {
-  wget --inet4-only -t 3 -T 30 -q $@
+  wget -t 3 -T 30 -q $@
 }
 
 os_ip() {
